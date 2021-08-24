@@ -29,26 +29,25 @@ Private Sub Worksheet_Change(ByVal Target As Range)
     End If
 
     If Sheet1.Range(col_history & Target.Row) = "" Then
-        Sheet1.Range(col_history & Target.Row) _
-            = date_now & " " & Target
+        Sheet1.Range(col_history & Target.Row) = date_now & " " & Target
         Exit Sub
     End If
 
-    If InStr(Sheet1.Range(col_history & Target.Row), "|") = 0 _
+    If InStr(Sheet1.Range(col_history & Target.Row), vbLf) = 0 _
         And Sheet1.Range(col_history & Target.Row) _
         <> date_now & " " & Target Then
         Sheet1.Range(col_history & Target.Row) _
             = date_now & " " & Target _
-            & "  |  " & Sheet1.Range(col_history & Target.Row)
+            & vbLf & Sheet1.Range(col_history & Target.Row)
         Exit Sub
     End If
 
     Dim logs() As String
-    logs = split(Sheet1.Range(col_history & Target.Row), "  |  ")
+    logs = split(Sheet1.Range(col_history & Target.Row), vbLf)
     If logs(0) <> date_now & " " & Target Then
         Sheet1.Range(col_history & Target.Row) _
             = date_now & " " & Target _
-            & "  |  " & Sheet1.Range(col_history & Target.Row)
+            & vbLf & Sheet1.Range(col_history & Target.Row)
         Exit Sub
     End If
 End Sub
