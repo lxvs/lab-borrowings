@@ -38,14 +38,6 @@ Private Sub Worksheet_Change(ByVal Target As Range)
                 date_now & " " & Sheet1.Range(col_status & r)
             GoTo continue
         End If
-        If InStr(Sheet1.Range(col_history & r), vbLf) = 0 _
-            And Sheet1.Range(col_history & r) _
-            <> date_now & " " & Sheet1.Range(col_status & r) Then
-            Sheet1.Range(col_history & r) _
-                = date_now & " " & Sheet1.Range(col_status & r) _
-                & vbLf & Sheet1.Range(col_history & r)
-            GoTo continue
-        End If
         Dim logs() As String
         logs = Split(Sheet1.Range(col_history & r), vbLf)
         If logs(0) <> date_now & " " & Sheet1.Range(col_status & r) Then
