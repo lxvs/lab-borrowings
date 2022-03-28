@@ -1,8 +1,8 @@
 Option Explicit
 
-' Version       : 0.2.0
+' Version       : 0.3.0
 ' Author        : lxvs <jn.apsd@gmail.com>
-' Last Updated  : 2021-08-24
+' Last Updated  : 2022-03-28
 
 Private Sub Worksheet_Change(ByVal Target As Range)
 
