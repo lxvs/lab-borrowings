@@ -1,8 +1,8 @@
 Option Explicit
 
-' Version       : 0.3.0
+' Version       : 0.3.1
 ' Author        : lxvs <jn.apsd@gmail.com>
-' Last Updated  : 2022-03-28
+' Last Updated  : 2022-06-28
 
 Private Sub Worksheet_Change(ByVal Target As Range)
 
@@ -16,8 +16,8 @@ Private Sub Worksheet_Change(ByVal Target As Range)
     Dim i As Integer
 
     Set sheet = Sheet1
-    col_num_status = 5
-    col_num_history = 7
+    col_num_status = 7
+    col_num_history = col_num_status + 2
     col_status = Choose(col_num_status, _
         "A", "B", "C", "D", "E", "F", "G", "H", "I")
     col_history = Choose(col_num_history, _
